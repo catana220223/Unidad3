@@ -1,15 +1,19 @@
-//Implementa un programa que pida al usuario las calificaciones (double) de los 10 estudiantes de una clase y
-// los guarde en un array. Después, mostrará esas calificaciones (cada una en una línea), seguida de la media del curso
-// y del número de aprobados y suspensos. Se usará un método para calcular la nota media y otro para el número de suspensos.
+/*Modifica el programa anterior para que se puedan guardar hasta 30 calificaciones. El programa pedirá calificaciones
+al usuario hasta que éste introduzca una nota negativa (o se llene el array). El programa, además de lo requerido en
+el ejercicio anterior, mostrará la nota máxima llamando a un método que se encargue de encontrarla.*/
 
 import java.util.Scanner;
 
-public class Ejercicio8 {
+public class Ejercicio9 {
 
     public static void main(String[] args) {
 
-        double array[] = new double[10];
+        double array[] = new double[30];
 
+
+
+
+        NumeroAlumnos(array);
         PideNotas(array);
         System.out.println();
         MuestraNotas(array);
@@ -17,12 +21,13 @@ public class Ejercicio8 {
         MuestraSuspensos(array);
         System.out.println();
         MuestraMedia(array);
+        System.out.println();
+        MuestraMaxima(array);
+
+
     }
 
-
-
-
-   /*public static void PideNotas(double[] array) {
+     public static void PideNotas(double[] array) {
         for (int i = 0; i < array.length; i++) {
             Scanner sc = new Scanner(System.in);
             System.out.print("Introduce la nota: ");
@@ -31,41 +36,35 @@ public class Ejercicio8 {
 
 
             if (aux >= 0 && aux <= 10) {
-
+                array[i] = aux;
 
 
             } else {
 
-                System.out.println("Numero introducido no valido");
+                break;
             }
 
         }
     }
-    */
 
 
+    public static void NumeroAlumnos(double[] array) {
 
-    public static void PideNotas(double[] array) {
+
+        int numeroalumnos = 0;
         for (int i = 0; i < array.length; i++) {
-            Scanner sc = new Scanner(System.in);
-            System.out.print("Introduce la nota: ");
 
-
-            if (array[i] >= 0 || array[i] <= 10) {
-                array[i] = sc.nextDouble();
-
-            } else {
-
-                System.out.println("Numero introducido no valido");
-            }
-
+            if (array [i] > 0);
+            numeroalumnos++;
         }
     }
+
 
 
     public static void MuestraNotas(double[] array) {
         for (int i = 0; i < array.length; i++) {
-            System.out.println(array[i]);
+            System.out.println(array [i] );
+
         }
     }
 
@@ -78,11 +77,26 @@ public class Ejercicio8 {
             media = media + array[i];
 
         }
+
         media = media / array.length;
 
-        System.out.printf("La media del curso es: " + "%.2f", media);
+        System.out.printf("%.2f", media);
 
     }
+
+    public static void MuestraMaxima(double[] array) {
+
+       double max = 0;
+
+       for (int i = 0; i < array.length; i++){
+
+           if (array[i] > max) {
+               max = array[i];
+           }
+       }
+        System.out.println("El maximo es: " +max);
+    }
+
 
     public static void MuestraSuspensos(double[] array) {
         int aprobados = 0;
@@ -91,12 +105,12 @@ public class Ejercicio8 {
 
         for (int i = 0; i < array.length; i++) {
 
-
             if (array[i] < 5) {
 
                 suspensos++;
 
             } else {
+
                 aprobados++;
 
             }
@@ -106,4 +120,3 @@ public class Ejercicio8 {
 
     }
 }
-
