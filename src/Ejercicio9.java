@@ -27,7 +27,7 @@ public class Ejercicio9 {
 
     }
 
-     public static void PideNotas(double[] array) {
+    public static void PideNotas(double[] array) {
         for (int i = 0; i < array.length; i++) {
             Scanner sc = new Scanner(System.in);
             System.out.print("Introduce la nota: ");
@@ -86,14 +86,14 @@ public class Ejercicio9 {
 
     public static void MuestraMaxima(double[] array) {
 
-       double max = 0;
+        double max = 0;
 
-       for (int i = 0; i < array.length; i++){
+        for (int i = 0; i < array.length; i++){
 
-           if (array[i] > max) {
-               max = array[i];
-           }
-       }
+            if (array[i] > max) {
+                max = array[i];
+            }
+        }
         System.out.println("El maximo es: " +max);
     }
 
