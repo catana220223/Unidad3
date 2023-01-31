@@ -10,9 +10,6 @@ public class Ejercicio9 {
 
         double array[] = new double[30];
 
-
-
-
         NumeroAlumnos(array);
         PideNotas(array);
         System.out.println();
@@ -24,99 +21,89 @@ public class Ejercicio9 {
         System.out.println();
         MuestraMaxima(array);
 
-
     }
 
     public static void PideNotas(double[] array) {
         for (int i = 0; i < array.length; i++) {
             Scanner sc = new Scanner(System.in);
-            System.out.print("Introduce la nota: ");
+            System.out.print("Introduce la nota del cada alumno: ");
 
-            double aux = sc.nextDouble();
-
-
-            if (aux >= 0 && aux <= 10) {
-                array[i] = aux;
+          double aux = sc.nextDouble();
 
 
-            } else {
-
-                break;
-            }
-
-        }
-    }
+          if (aux >= 0 && aux <= 10) {
+              array[i] = aux;
 
 
-    public static void NumeroAlumnos(double[] array) {
+          } else {
+
+              break;
+          }
+
+      }
+  }
+
+  public static void NumeroAlumnos(double[] array) {
 
 
-        int numeroalumnos = 0;
-        for (int i = 0; i < array.length; i++) {
+      int numeroalumnos = 0;
+      for (int i = 0; i < array.length; i++) {
 
-            if (array [i] > 0);
-            numeroalumnos++;
-        }
-    }
+          if (array [i] > 0);
+          numeroalumnos++;
+      }
+  }
 
+  public static void MuestraNotas(double[] array) {
+      for (int i = 0; i < array.length; i++) {
+          System.out.println("La nota del alumno "+(i+1)+ " es: "+array [i] );
 
+      }
+  }
 
-    public static void MuestraNotas(double[] array) {
-        for (int i = 0; i < array.length; i++) {
-            System.out.println(array [i] );
+  public static void MuestraMedia(double[] array) {
 
-        }
-    }
+      double media = 0.0;
 
-    public static void MuestraMedia(double[] array) {
+      for (int i = 0; i < array.length; i++) {
 
-        double media = 0.0;
+          media = media + array[i];
 
-        for (int i = 0; i < array.length; i++) {
+      }
 
-            media = media + array[i];
+      media = media / array.length;
 
-        }
+      System.out.printf("La nota media es %.2f", media);
 
-        media = media / array.length;
+  }
 
-        System.out.printf("%.2f", media);
+  public static void MuestraMaxima(double[] array) {
 
-    }
+      double max = 0;
 
-    public static void MuestraMaxima(double[] array) {
-
-        double max = 0;
-
-        for (int i = 0; i < array.length; i++){
+      for (int i = 0; i < array.length; i++){
 
             if (array[i] > max) {
-                max = array[i];
-            }
-        }
-        System.out.println("El maximo es: " +max);
-    }
+              max = array[i];
+          }
+      }
+      System.out.println("La nota máxima es: " +max);
+  }
 
 
-    public static void MuestraSuspensos(double[] array) {
-        int aprobados = 0;
+  public static void MuestraSuspensos(double[] array) {
+      int aprobados = 0;
 
-        int suspensos = 0;
+      int suspensos = 0;
 
-        for (int i = 0; i < array.length; i++) {
+      for (int i = 0; i < array.length; i++) {
 
-            if (array[i] < 5) {
-
-                suspensos++;
-
-            } else {
-
-                aprobados++;
-
-            }
-        }
-
+          if (array[i] < 5) {
+              suspensos++;
+          } else {
+              aprobados++;
+          }
+      }
         System.out.println("Han aprobado " + aprobados + " personas y han suspendido " + suspensos + " personas");
-
     }
 }
