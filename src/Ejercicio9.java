@@ -22,7 +22,7 @@ public class Ejercicio9 {
         MuestraMaxima(array);
 
     }
-//
+
     public static void PideNotas(double[] array) {
         for (int i = 0; i < array.length; i++) {
             Scanner sc = new Scanner(System.in);
